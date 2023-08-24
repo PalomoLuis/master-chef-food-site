@@ -9,7 +9,7 @@ const Title3 = ({ color, extraCss, children }) => {
 const Title4 = ({ color, extraCss, children }) => {
     return (
         <h3
-            className={`font-title text-3xl w-80 mb-4 uppercase leading-10 ${ color } ${ extraCss }`}
+            className={`font-title text-xl md:text-2xl lg:text-3xl w-80 mb-2 md:mb-4 uppercase leading-6 xl:leading-10 ${ color } ${ extraCss }`}
         >{ children }</h3>
     )
 }

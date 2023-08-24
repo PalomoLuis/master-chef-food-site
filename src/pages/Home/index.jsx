@@ -3,7 +3,7 @@ import Hero from '../../Components/Hero/index.jsx'
 import TitleDivider from '../../Components/Dividers/TitleDivider.jsx'
 import mainLogo from '../../../public/LogoMasterChef.svg'
 import HeroImage from '../../images/vegetables-cheese-black-plate.jpeg'
-import Gallery from '../../Components/Sections/Gallery.jsx'
+import { GalleryTwo, GalleryThree } from '../../Components/Sections/Gallery.jsx'
 import bgSection1 from '../../images/rock-texture.jpeg'
 import { Title3 } from '../../Components/Text/Titles.jsx'
 import favourites from '../../data/favoutires.js'
@@ -22,8 +22,7 @@ function Home() {
       <Layout>
         <Hero bgImage={ HeroImage }/>
         <TitleDivider title={ 'take a look of our menu' }/>
-        <Gallery
-          columns={ 3 } 
+        <GalleryThree
           bgImage={ bgSection1 }
           elements={ favourites().map(value => {
             return (
@@ -38,7 +37,7 @@ function Home() {
           }) }
         >
           <Title3 color={'text-white'} extraCss={'mb-12 lg:mb-16 text-center'}>customer favourites</Title3>
-        </Gallery>
+        </GalleryThree>
         <PromotionFullCard
           image={ favofitePlateImage }
           preTitle="special of the day"
@@ -47,7 +46,7 @@ function Home() {
           price={ 8.19 }
         ></PromotionFullCard>
         < TitleDivider title={ 'not enough?' }/>
-        <Gallery
+        <GalleryTwo
           columns={ 2 }
           bgColor={ 'bg-silver2' }
           elements={ pizzas.map( value => {
@@ -63,8 +62,8 @@ function Home() {
           }) }
         >
           <Title3 color={'text-white'} extraCss={'mb-12 lg:mb-16 text-center'}>Pizzas</Title3>
-        </Gallery>
-        <img src={ pizzaImage } alt="pizzas" />
+        </GalleryTwo>
+        <img src={ pizzaImage } alt="pizzas" className='h-[400px] lg:h-auto object-cover'/>
         <FiftyYearsSpecialCard
           image={ fiftyYearsImage }
           title1='50'

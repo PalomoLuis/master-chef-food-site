@@ -1,22 +1,11 @@
-const Gallery = ({ columns, elements, bgImage, bgColor, children }) => {
-
-    let columnsAmount = () => {
-        let style = ''
-        for (let i = 0; i < columns; i++) {
-            style += '1fr '
-        }
-        return style
-    }
-
+const GalleryTwo = ({ elements, bgImage, bgColor, children }) => {
     return (
         <div className={`flex justify-center items-center w-full py-20 ${ bgColor }`}
             style={{backgroundImage: `url(${ bgImage })`}}
         >
-            <div className="w-8/12">
+            <div className="w-10/12 xl:w-8/12">
                 { children }
-                <div className='grid gap-8'
-                    style={{ gridTemplateColumns: columnsAmount()}}
-                >
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                     {
                         elements
                     }
@@ -26,4 +15,21 @@ const Gallery = ({ columns, elements, bgImage, bgColor, children }) => {
     )
 }
 
-export default Gallery
+const GalleryThree = ({ elements, bgImage, bgColor, children }) => {
+    return (
+        <div className={`flex justify-center items-center w-full py-20 ${ bgColor }`}
+            style={{backgroundImage: `url(${ bgImage })`}}
+        >
+            <div className="w-10/12 xl:w-8/12">
+                { children }
+                <div className='grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+                    {
+                        elements
+                    }
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export { GalleryThree, GalleryTwo }

@@ -8,8 +8,8 @@ const Navbar = () => {
 
     return (
         <nav className="flex justify-center items-center absolute top-0 z-10 w-full  mt-[30%] md:mt-[20%] lg:mt-6">
-            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-8/12">
-                <div className="logo w-[240px]">
+            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-10/12 xl:w-8/12">
+                <div className="logo lg:w-[200px] xl:w-[240px]">
                     <NavLink
                         to='/'
                     >
