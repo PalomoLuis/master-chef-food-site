@@ -1,0 +1,142 @@
+{
+    "croin_eggs": {
+        "id": 1,
+        "name": "Croin Eggs",
+        "price": 7.00,
+        "description": "",
+        "image": [
+            "./src/images/croin-eggs.png"
+        ],
+        "category": ["plates"]
+    },
+    "mole_sauce": {
+        "id": 2,
+        "name": "Mole Sauce",
+        "price": 11.20,
+        "description": "",
+        "image": [
+            "./src/images/mole-sauce.png"
+        ],
+        "category": ["plates"]
+    },
+    "moito_seeds": {
+        "id": 3,
+        "name": "Moito Seeds",
+        "price": 6.75,
+        "description": "",
+        "image": [
+            "./src/images/moito_seeds.png"
+        ],
+        "category": ["plates"]
+    },
+    "nonMeet_and_grill": {
+        "id": 4,
+        "name": "Non-Meet & Grill",
+        "price": 14.00,
+        "description": "",
+        "image": [
+            "./src/images/non-meet-&-grill.png"
+        ],
+        "category": ["plates"]
+    },
+    "cereal_mix": {
+        "id": 5,
+        "name": "Cereal Mix",
+        "price": 4.05,
+        "description": "",
+        "image": [
+            "./src/images/cereal_mix.png"
+        ],
+        "category": ["plates"]
+    },
+    "asian_gelato": {
+        "id": 6,
+        "name": "Asian Gelato",
+        "price": 4.90,
+        "description": "",
+        "image": [
+            "./src/images/asian_gelato.png"
+        ],
+        "category": ["desserts"]
+    },
+    "pepperoni": {
+        "id": 7,
+        "name": "Pepperoni",
+        "price": 11.00,
+        "description": "Very thin crispy dough with Italian sauce, Parmesan cheese, and pepperonis chosen by the chef.",
+        "image": [
+            "./src/images/pepperoni-pizza.png"
+        ],
+        "category": ["pizzas"]
+    },
+    "napolitana": {
+        "id": 8,
+        "name": "Napolitana",
+        "price": 10.00,
+        "description": "Delicious thin crust pizza with honey aloi decorated with bell peppers and olives.",
+        "image": [
+            "./src/images/napolitana-pizza.png"
+        ],
+        "category": ["pizzas"]
+    },
+    "four_cheese": {
+        "id": 9,
+        "name": "Four Cheese",
+        "price": 14.70,
+        "description": "A mixture of flavors. Parmesan cheese mixed with Roquefort, cream, and mozzarella.",
+        "image": [
+            "./src/images/four-cheese-pizza.png"
+        ],
+        "category": ["pizzas"]
+    },
+    "blanca_flor": {
+        "id": 10,
+        "name": "Blanca Flor",
+        "price": 14.30,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": [
+            "./src/images/blanca-flor-pizza.png"
+        ],
+        "category": ["pizzas"]
+    },
+    "margarita": {
+        "id": 11,
+        "name": "Margarita",
+        "price": 12.90,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+        "image": [
+            "./src/images/margarita-pizza.png"
+        ],
+        "category": ["pizzas"]
+    },
+    "american": {
+        "id": 12,
+        "name": "American",
+        "price": 15.60,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+        "image": [
+            "./src/images/american-pizza.png"
+        ],
+        "category": ["pizzas"]
+    },
+    "pomodoro": {
+        "id": 13,
+        "name": "Pomodoro",
+        "price": 4.90,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+        "image": [
+            "./src/images/pomodoro-pizza.png"
+        ],
+        "category": ["pizzas"]
+    },
+    "american_texas": {
+        "id": 14,
+        "name": "American Texas",
+        "price": 18.09,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+        "image": [
+            "./src/images/american-texas-pizza.png"
+        ],
+        "category": ["pizzas"]
+    }
+}
