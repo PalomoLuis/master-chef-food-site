@@ -42,9 +42,9 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
-            <div className="fixed hidden bg-white">
-                🛒
-            </div>
+            <button className="fixed top-10 lg:top-[unset]  md:right-10 xl:right-20 bg-transparent hover:bg-golden text-white hover:text-silver h-[40px] w-[40px] flex justify-center items-center rounded-full">
+                <a className="material-icons">shopping_cart</a>
+            </button>
         </nav>
     )
 }

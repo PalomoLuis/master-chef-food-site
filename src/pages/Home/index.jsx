@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Layout from '../../Components/Layout/index.jsx'
 import Hero from '../../Components/Hero/index.jsx'
 import TitleDivider from '../../Components/Dividers/TitleDivider.jsx'
@@ -16,6 +17,17 @@ import fiftyYearsImage from '../../images/fifty-years-chef-cooking.jpeg'
 
 function Home() {
   const pizzas = Object.values(products).filter(value => value.category.find(item => item === 'pizzas'))
+  // const URL = 'https://api.escuelajs.co/api/v1/products/1'
+  // const URL2 = 'https://pokeapi.co/api/v2/pokemon/ditto'
+
+  // useEffect(() => {
+  //   fetch(URL2)
+  //     .then(response => response.json())
+  //     .then(data => console.log(data))
+  //     .catch(err => {
+  //       console.error('Error :', err)
+  //     })
+  // }, [])
 
   return (
     <>
@@ -27,11 +39,11 @@ function Home() {
           elements={ favourites().map(value => {
             return (
               <ImageCard
-                title={ value.name }
-                price={ value.price }
+                title={ value?.name }
+                price={ value?.price }
                 cta='add'
-                image={ value.image[0]}
-                key={ value.id }
+                image={ value?.image[0]}
+                key={ value?.id }
               />
             )
           }) }

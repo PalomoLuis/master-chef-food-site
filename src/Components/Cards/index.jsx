@@ -21,8 +21,8 @@ const ImageCard = ({ image, title, price, cta }) => {
         <div className="bg-silver opacity-80 shadow-md p-4 md:p-6 xl:p-8 rounded-xl drop-shadow-8l">
             <div className="relative flex md:flex-col items-center justify-between h-full min-h-[60px]">
                 <img src={ image } alt={ title } className="absolute md:static left-[-20px] top-[50%] translate-y-[-50%] md:translate-y-0 w-[110px] md:w-4/5 xl:w-2/3 mb-10 drop-shadow-2xl"/>
-                <button className="absolute bottom-0 md:bottom-[unset] md:top-0 right-0 text-white">i</button>
-                <div className="ml-[35%] md:ml-0 w-[65%] place-self-start md:place-self-center md:w-full flex justify-between">
+                <button className="absolute bottom-[-8PX] md:bottom-[unset] md:top-0 right-0 text-white">i</button>
+                <div className="ml-[35%] md:ml-0 w-[65%] place-self-start md:place-self-center md:w-full flex justify-between gap-2 md:gap-0">
                     <div>
                         <p className="text-golden font-body text-sm xl:text-base mb-1 xl:mb-1/2">$ { price }</p>
                         <p className="text-white font-title text-sm xl:text-base">{ title }</p>
