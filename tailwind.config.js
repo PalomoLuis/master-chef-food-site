@@ -18,6 +18,7 @@ export default {
         'golden': '#F8AB39'
       },
       dropShadow: {
+        '2l': '2px 2px 10px rgba(0, 0, 0, 0.40)',
         '8l': '8px 8px 20px rgba(0, 0, 0, 0.30)',
         '2xl': '20px 20px 20px rgba(0, 0, 0, 0.25)',
         '3xl': [

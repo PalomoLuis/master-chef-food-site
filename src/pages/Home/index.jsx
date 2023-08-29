@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import Layout from '../../Components/Layout/index.jsx'
 import Hero from '../../Components/Hero/index.jsx'
 import TitleDivider from '../../Components/Dividers/TitleDivider.jsx'
@@ -14,9 +14,12 @@ import products from '../../data/products.json'
 import pizzaImage from '../../images/pizzas-1.jpeg'
 import Footer from '../../Components/Sections/Footer.jsx'
 import fiftyYearsImage from '../../images/fifty-years-chef-cooking.jpeg'
+import { CartOrder } from '../../Components/cartOrder/index.jsx'
+import { ShoppingCartContext } from '../../Context/index.jsx'
 
 function Home() {
   const pizzas = Object.values(products).filter(value => value.category.find(item => item === 'pizzas'))
+  const { isCartOpen } = useContext(ShoppingCartContext)
   // const URL = 'https://api.escuelajs.co/api/v1/products/1'
   // const URL2 = 'https://pokeapi.co/api/v2/pokemon/ditto'
 
@@ -39,6 +42,7 @@ function Home() {
           elements={ favourites().map(value => {
             return (
               <ImageCard
+                id={ value?.id }
                 title={ value?.name }
                 price={ value?.price }
                 cta='add'
@@ -51,11 +55,13 @@ function Home() {
           <Title3 color={'text-white'} extraCss={'mb-12 lg:mb-16 text-center'}>customer favourites</Title3>
         </GalleryThree>
         <PromotionFullCard
+          id={ 999 }
           image={ favofitePlateImage }
           preTitle="special of the day"
           title="Ekaterina bolovtsova"
           description="Sauteed portobellos with aromas of rosemary, accompanied with cornbread with apple tints."
           price={ 8.19 }
+          cta='add'
         ></PromotionFullCard>
         < TitleDivider title={ 'not enough?' }/>
         <GalleryTwo
@@ -64,11 +70,12 @@ function Home() {
           elements={ pizzas.map( value => {
             return (
               <TextCard
-                title={ value.name }
-                description={ value.description }
-                price={ value.price }
+                id={ value?.id }
+                title={ value?.name }
+                description={ value?.description }
+                price={ value?.price }
                 cta='add'
-                key={ value.id }
+                key={ value?.id }
               />
             )
           }) }
@@ -94,6 +101,9 @@ function Home() {
           title4='more info'
           list4={['Terms and conditions','Work with us']}
         />
+        {
+          isCartOpen ? <CartOrder /> : null
+        }
       </Layout>
       {/* <h1>Home</h1> */}
     </>

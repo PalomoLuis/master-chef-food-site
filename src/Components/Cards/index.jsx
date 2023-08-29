@@ -1,7 +1,12 @@
 import { Title3, Title4 } from "../Text/Titles"
 import { ButtonSGold } from "../Buttons"
+import { useContext } from "react"
+import { ShoppingCartContext } from "../../Context"
 
-const TextCard = ({ title, price, cta, description, newTag }) => {
+
+const TextCard = ({ id, title, price, cta, description, newTag }) => {
+    const { count, setCount, productsToShow, setProductsToShow, updateCartList } = useContext(ShoppingCartContext)
+
     return (
         <div className="relative bg-silver3 shadow-md px-6 xl:px-8 py-4 xl:py-6 rounded-xl drop-shadow-8l flex justify-between gap-6 md:gap-2">
             <div className="w-[80%]"> 
@@ -10,13 +15,21 @@ const TextCard = ({ title, price, cta, description, newTag }) => {
             </div>
             <div className="flex flex-col items-center justify-between gap-2">
                 <p className="text-golden font-body mb-1/2">$ { price }</p>
-                <ButtonSGold>{ cta }</ButtonSGold>
+                <div onClick={() => {
+                    setCount(count + 1)
+                    setProductsToShow([...productsToShow, { id: id, title: title, price: price}])
+                    updateCartList()
+                }}>
+                    <ButtonSGold>{ cta }</ButtonSGold>
+                </div>
             </div>
         </div>
     )
 }
 
-const ImageCard = ({ image, title, price, cta }) => {
+const ImageCard = ({ id, image, title, price, cta }) => {
+    const { count, setCount, productsToShow, setProductsToShow, updateCartList } = useContext(ShoppingCartContext)
+
     return (
         <div className="bg-silver opacity-80 shadow-md p-4 md:p-6 xl:p-8 rounded-xl drop-shadow-8l">
             <div className="relative flex md:flex-col items-center justify-between h-full min-h-[60px]">
@@ -27,14 +40,22 @@ const ImageCard = ({ image, title, price, cta }) => {
                         <p className="text-golden font-body text-sm xl:text-base mb-1 xl:mb-1/2">$ { price }</p>
                         <p className="text-white font-title text-sm xl:text-base">{ title }</p>
                     </div>
-                    <ButtonSGold>{ cta }</ButtonSGold>
+                    <div onClick={() => {
+                        setCount(count + 1)
+                        setProductsToShow([...productsToShow, { id: id, title: title, price: price}])
+                        updateCartList()
+                    }}>
+                        <ButtonSGold>{ cta }</ButtonSGold>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-const PromotionFullCard = ({ image, preTitle, title, price, cta, description, children }) => {
+const PromotionFullCard = ({ id, image, preTitle, title, price, cta, description, children }) => {
+    const { count, setCount, productsToShow, setProductsToShow, updateCartList } = useContext(ShoppingCartContext)
+
     return (
         <div className="flex justify-center w-full py-20 bg-black bg-cover"
             style={{ backgroundImage:`linear-gradient(to bottom, #0C151A 10%, #0C151A00 100%), url('${image}')` }}
@@ -46,7 +67,13 @@ const PromotionFullCard = ({ image, preTitle, title, price, cta, description, ch
                     <p className="text-white text-sm md:text-base w-1/2 lg:w-80 md:text-end">{ description }</p>
                     <div className="mt-6 flex gap-4 items-center">
                         <p className="text-golden font-body text-lg">$ { price }</p>
-                        <ButtonSGold>add</ButtonSGold>
+                        <div onClick={() => {
+                            setCount(count + 1)
+                            setProductsToShow([...productsToShow, { id: id, title: title, price: price}])
+                            updateCartList()
+                        }}>
+                            <ButtonSGold>{ cta }</ButtonSGold>
+                        </div>
                     </div>
                 </div>
             </div>

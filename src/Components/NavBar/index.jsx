@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom"
 import mainLogo from '../../../public/LogoMasterChef.svg'
+import { useContext, useState } from "react"
+import { ShoppingCartContext } from "../../Context"
 
 const Navbar = () => {
+
+    const { count, isCartOpen, openCart, closeCart } = useContext(ShoppingCartContext)
 
     const activeStyle = 'underline underline-offset-4'
     let mobile = false 
@@ -42,8 +46,19 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
-            <button className="fixed top-10 lg:top-[unset]  md:right-10 xl:right-20 bg-transparent hover:bg-golden text-white hover:text-silver h-[40px] w-[40px] flex justify-center items-center rounded-full">
+            <button className="fixed bottom-10 sm:bottom-[unset] sm:top-10 lg:top-[unset] right-10 xl:right-20 bg-golden sm:bg-transparent hover:bg-golden text-silver sm:text-white hover:text-silver h-[40px] w-[40px] flex justify-center items-center rounded-full drop-shadow-2l"
+                onClick={() => {
+                    if(isCartOpen) {
+                        closeCart()
+                    } else {
+                        openCart()
+                    }
+                }}
+            >
                 <a className="material-icons">shopping_cart</a>
+                <div
+                    className={`absolute bg-red-600 font-medium text-white flex justify-center items-center text-xs h-6 w-6 max-w-6 max-h-6 rounded-full right-[-25%] top-[-25%] ${ count > 0 ? 'flex' : 'hidden'}`}
+                >{ count }</div>
             </button>
         </nav>
     )
