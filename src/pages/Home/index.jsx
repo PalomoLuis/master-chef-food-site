@@ -36,7 +36,7 @@ function Home() {
     <>
       <Layout>
         <Hero bgImage={ HeroImage }/>
-        <TitleDivider title={ 'take a look of our menu' }/>
+        <TitleDivider title={ 'take a look at our menu' }/>
         <GalleryThree
           bgImage={ bgSection1 }
           elements={ favourites().map(value => {

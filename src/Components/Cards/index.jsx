@@ -5,7 +5,20 @@ import { ShoppingCartContext } from "../../Context"
 
 
 const TextCard = ({ id, title, price, cta, description, newTag }) => {
-    const { count, setCount, productsToShow, setProductsToShow, updateCartList } = useContext(ShoppingCartContext)
+    const { count, setCount, productsToShow, setProductsToShow } = useContext(ShoppingCartContext)
+    const updateCartList = (data) => {
+        let { id, title, price, amount } = data
+        let newData
+        console.log(count, productsToShow)
+        let productInCardIndex = productsToShow.findIndex(value => value.id === id)
+        if(productInCardIndex !== -1) {
+            let products = [...productsToShow]
+            products[productInCardIndex].amount += 1
+            setProductsToShow(products)
+        } else {
+            setProductsToShow([...productsToShow, { id: id, title: title, price: price, amount: amount}])
+        }
+    } 
 
     return (
         <div className="relative bg-silver3 shadow-md px-6 xl:px-8 py-4 xl:py-6 rounded-xl drop-shadow-8l flex justify-between gap-6 md:gap-2">
@@ -17,8 +30,7 @@ const TextCard = ({ id, title, price, cta, description, newTag }) => {
                 <p className="text-golden font-body mb-1/2">$ { price }</p>
                 <div onClick={() => {
                     setCount(count + 1)
-                    setProductsToShow([...productsToShow, { id: id, title: title, price: price}])
-                    updateCartList()
+                    updateCartList({ id: id, title: title, price: price, amount: 1 })
                 }}>
                     <ButtonSGold>{ cta }</ButtonSGold>
                 </div>
@@ -28,7 +40,20 @@ const TextCard = ({ id, title, price, cta, description, newTag }) => {
 }
 
 const ImageCard = ({ id, image, title, price, cta }) => {
-    const { count, setCount, productsToShow, setProductsToShow, updateCartList } = useContext(ShoppingCartContext)
+    const { count, setCount, productsToShow, setProductsToShow } = useContext(ShoppingCartContext)
+    const updateCartList = (data) => {
+        let { id, title, price, amount } = data
+        let newData
+        console.log(count, productsToShow)
+        let productInCardIndex = productsToShow.findIndex(value => value.id === id)
+        if(productInCardIndex !== -1) {
+            let products = [...productsToShow]
+            products[productInCardIndex].amount += 1
+            setProductsToShow(products)
+        } else {
+            setProductsToShow([...productsToShow, { id: id, title: title, price: price, amount: amount}])
+        }
+    } 
 
     return (
         <div className="bg-silver opacity-80 shadow-md p-4 md:p-6 xl:p-8 rounded-xl drop-shadow-8l">
@@ -42,8 +67,7 @@ const ImageCard = ({ id, image, title, price, cta }) => {
                     </div>
                     <div onClick={() => {
                         setCount(count + 1)
-                        setProductsToShow([...productsToShow, { id: id, title: title, price: price}])
-                        updateCartList()
+                        updateCartList({ id: id, title: title, price: price, amount: 1 })
                     }}>
                         <ButtonSGold>{ cta }</ButtonSGold>
                     </div>
@@ -54,7 +78,20 @@ const ImageCard = ({ id, image, title, price, cta }) => {
 }
 
 const PromotionFullCard = ({ id, image, preTitle, title, price, cta, description, children }) => {
-    const { count, setCount, productsToShow, setProductsToShow, updateCartList } = useContext(ShoppingCartContext)
+    const { count, setCount, productsToShow, setProductsToShow } = useContext(ShoppingCartContext)
+    const updateCartList = (data) => {
+        let { id, title, price, amount } = data
+        let newData
+        console.log(count, productsToShow)
+        let productInCardIndex = productsToShow.findIndex(value => value.id === id)
+        if(productInCardIndex !== -1) {
+            let products = [...productsToShow]
+            products[productInCardIndex].amount += 1
+            setProductsToShow(products)
+        } else {
+            setProductsToShow([...productsToShow, { id: id, title: title, price: price, amount: amount}])
+        }
+    } 
 
     return (
         <div className="flex justify-center w-full py-20 bg-black bg-cover"
@@ -69,8 +106,7 @@ const PromotionFullCard = ({ id, image, preTitle, title, price, cta, description
                         <p className="text-golden font-body text-lg">$ { price }</p>
                         <div onClick={() => {
                             setCount(count + 1)
-                            setProductsToShow([...productsToShow, { id: id, title: title, price: price}])
-                            updateCartList()
+                            updateCartList({ id: id, title: title, price: price, amount: 1 })
                         }}>
                             <ButtonSGold>{ cta }</ButtonSGold>
                         </div>

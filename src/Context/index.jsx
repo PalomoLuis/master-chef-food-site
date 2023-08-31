@@ -9,14 +9,17 @@ export const ShoppingCartProvider = ({ children }) => {
     const openCart = () => setIsCartOpen(true)
     const closeCart = () => setIsCartOpen(false)
     const [productsToShow, setProductsToShow] = useState([])
-    const [cartList, setCartList] = useState([])
-    const updateCartList = () => {
-        let list = productsToShow
-        let amountList = {}
-        list.map( value => amountList[value.id] = { id: value.id, amount: 0, title: value.title, price: value.price})
-        list.map( value => amountList[value.id].amount += 1)
-        setCartList(Object.values(amountList))
-    } 
+    // const [cartList, setCartList] = useState([])
+    // const updateCartList = (data) => {
+    //     let { id, title, price } = data
+    //     setProductsToShow([...productsToShow, { id: id, title: title, price: price}])
+    //     let list = productsToShow
+    //     // let list = data
+    //     let amountList = {}
+    //     list.map( value => amountList[value.id] = { id: value.id, amount: 0, title: value.title, price: value.price})
+    //     list.map( value => amountList[value.id].amount += 1)
+    //     setCartList(Object.values(amountList))
+    // } 
     // const [ cartShowList, setCartShowList ] = useState([])
 
 
@@ -29,8 +32,8 @@ export const ShoppingCartProvider = ({ children }) => {
             closeCart,
             productsToShow,
             setProductsToShow,
-            cartList,
-            updateCartList
+            // cartList
+            // updateCartList
         }}>
             { children }
         </ShoppingCartContext.Provider>

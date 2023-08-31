@@ -1,0 +1,3 @@
+.cartProduct {
+    grid-template-columns: 1fr 10% 12% 35px;
+}
