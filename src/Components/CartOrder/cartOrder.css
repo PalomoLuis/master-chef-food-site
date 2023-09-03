@@ -1,3 +1,7 @@
 .cartProduct {
-    grid-template-columns: 1fr 10% 12% 35px;
+    grid-template-columns: 1fr 15% 20% 35px;
+}
+
+.arrows a{
+    font-size: 16px;
 }

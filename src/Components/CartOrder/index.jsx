@@ -9,7 +9,6 @@ export const CartOrder = () => {
     productsToShow.map(value => total += value.price * value.amount)
 
     const removeOne = (id) => {
-        debugger
         console.log(productsToShow)
         let products = [...productsToShow]
         let productInCardIndex = products.findIndex(value => value.id === id)
@@ -20,24 +19,56 @@ export const CartOrder = () => {
             products.splice(productInCardIndex, 1)
             setProductsToShow(products)
         }
-    } 
+    }
+
+    const addOne = (id) => {
+        let products = [...productsToShow]
+        let productInCardIndex = products.findIndex(value => value.id === id)
+        products[productInCardIndex].amount += 1
+        setProductsToShow(products)
+    }
+
+    const deleteProduct = (id) => {
+        let products = [...productsToShow]
+        let productInCardIndex = products.findIndex(value => value.id === id)
+        products.splice(productInCardIndex, 1)
+        setProductsToShow(products)
+    }
 
     return (
         <aside className="z-20 fixed top-0 right-0 w-full md:w-[500px] h-[100vh] bg-silver2 bg-opacity-95 shadow-2xl text-white flex flex-wrap justify-center items-end px-8 pb-8 rounded-l-3xl">
-            <button className="absolute top-8 left-8"
+            <button className="absolute top-6 left-6"
                 onClick={() => closeCart()}
-            >X</button>
+            >
+                <a className="material-icons p-2">close</a>
+            </button>
             <div className="cartProduct-cont w-full h-[80%] overflow-hidden hover:overflow-y-scroll">
                 {
                     productsToShow.map(value => (
                         <div className="cartProduct w-full grid items-center mb-2 p-3 shadow-lg bg-silver3 rounded-md" key={ value.id}>
                             <p>{ value.title }</p>
-                            <p>{ value.amount }</p>
-                            <p className="text-golden">${ (value.price * value.amount).toFixed(2) }</p>
+                            <div className="grid grid-cols-2 items-center">
+                                <p className="text-center">{ value.amount }</p>
+                                <div className="arrows flex flex-col items-center">
+                                    <a className="material-icons w-full text-center rounded-t-md hover:bg-gray-400 hover:cursor-pointer active:bg-golden"
+                                        onClick={() => {
+                                            setCount(count + 1)
+                                            addOne(value.id)
+                                        }}
+                                    >keyboard_arrow_up</a>
+                                    <a className="material-icons w-full text-center rounded-b-md hover:bg-gray-400 hover:cursor-pointer active:bg-golden"
+                                            onClick={ () => {
+                                                setCount(count - 1)
+                                                removeOne(value.id)
+                                            } }
+                                    >keyboard_arrow_down</a>
+                                </div>
+                            </div>
+                            <p className="text-golden ml-4">${ (value.price * value.amount).toFixed(2) }</p>
                             <a className="material-icons w-[30px] h-[30px] text-center justify-self-end p-1 text-lg hover:bg-golden hover:text-silver hover:cursor-pointer rounded-full"
                             onClick={ () => {
-                                setCount(count - 1)
-                                removeOne(value.id)
+                                setCount(count - value.amount)
+                                deleteProduct(value.id)
                             } }
                             >close</a>
                         </div>
