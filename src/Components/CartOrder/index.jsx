@@ -4,7 +4,7 @@ import { ShoppingCartContext } from "../../Context"
 import './cartOrder.css'
 import { ButtonSGold } from "../Buttons"
 
-export const CartOrder = () => {
+const CartOrder = () => {
     const { count, setCount, closeCart, productsToShow, setProductsToShow, orders, setOrders } = useContext(ShoppingCartContext)
 
     let total = 0
@@ -114,3 +114,5 @@ export const CartOrder = () => {
         </aside>
     )
 }
+
+export { CartOrder }
