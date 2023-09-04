@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import mainLogo from '../../../public/LogoMasterChef.svg'
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { ShoppingCartContext } from "../../Context"
 import SearchGallery from "../Sections/SearchGallery"
 import products from '../../data/products.json'
@@ -17,8 +17,25 @@ const Navbar = ({isPoster}) => {
     //     setFilteredProducts(newListOfProducts)
     // }
 
+    const [mobile, setMobile] = useState(false)
     const activeStyle = 'underline underline-offset-4'
-    let mobile = false 
+    // if(windowW < 641) setMobile(true)
+
+    useEffect(() => {
+        let windowWidth = window.innerWidth
+        const handleResize = () => windowWidth = window.innerWidth
+        window.addEventListener('resize', handleResize)
+
+        if(windowWidth < 641) {
+            setMobile(true)
+        } else {
+            setMobile(false)
+        }
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const showMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
 
     return (
         <nav className={`flex justify-center items-center absolute top-0 z-10 w-full ${isPoster ? 'mt-[30%] md:mt-[20%] lg:mt-6' : 'mt-6'}`}>
@@ -32,36 +49,51 @@ const Navbar = ({isPoster}) => {
                 </div>
                 <ul className="flex justify-end items-center gap-8 w-full text-white font-body">
                     {
-                        mobile ? 
-                            <div className="hamb-mobile-logo">
-                                hamb-mobile-logo
-                            </div> : ''
+                        mobile ?
+                            <button className="fixed bottom-[6rem] sm:bottom-[unset] sm:top-10 lg:top-[unset] right-10 xl:right-20 bg-white sm:bg-transparent text-silver sm:text-white hover:text-silver h-[40px] w-[40px] flex justify-center items-center rounded-full drop-shadow-2l z-30"
+                                onClick={() => showMobileMenu()}
+                            >
+                                {
+                                    mobileMenuOpen ?
+                                    <a className="material-icons">close</a> :
+                                    <a className="material-icons">menu</a>
+                                }
+                            </button> : ''
 
                     }
-                    <li>
-                        <NavLink
-                            to='/my-orders'
-                            className={({ isActive }) => isActive ? activeStyle : undefined }
-                        >
-                            My Orders
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to='/about-us'
-                            className={({ isActive }) => isActive ? activeStyle : undefined }
-                        >
-                            About Us
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to='/contact'
-                            className={({ isActive }) => isActive ? activeStyle : undefined }
-                        >
-                            Contact
-                        </NavLink>
-                    </li>
+                    {
+                        mobile ? '' :
+                            <li>
+                                <NavLink
+                                    to='/my-orders'
+                                    className={({ isActive }) => isActive ? activeStyle : undefined }
+                                >
+                                    My Orders
+                                </NavLink>
+                            </li>
+                    }
+                    {
+                        mobile ? '' :
+                            <li>
+                                <NavLink
+                                    to='/about-us'
+                                    className={({ isActive }) => isActive ? activeStyle : undefined }
+                                >
+                                    About Us
+                                </NavLink>
+                            </li>
+                    }
+                    {
+                        mobile ? '' :
+                            <li>
+                                <NavLink
+                                    to='/contact'
+                                    className={({ isActive }) => isActive ? activeStyle : undefined }
+                                >
+                                    Contact
+                                </NavLink>
+                            </li>
+                    }
                     {/* <li>
                         <div className="flex justify-center items-center gap-2 fixed bottom-[5.5rem] right-10 md:bottom-[unset] md:right-20 md:top-10 lg:static">
                             {
@@ -91,7 +123,7 @@ const Navbar = ({isPoster}) => {
                     </li> */}
                 </ul>
             </div>
-            <button className="fixed bottom-10 sm:bottom-[unset] sm:top-10 lg:top-[unset] right-10 xl:right-20 bg-golden sm:bg-transparent hover:bg-golden text-silver sm:text-white hover:text-silver h-[40px] w-[40px] flex justify-center items-center rounded-full drop-shadow-2l"
+            <button className="fixed bottom-10 sm:bottom-[unset] sm:top-10 lg:top-[unset] right-10 xl:right-20 bg-golden sm:bg-transparent hover:bg-golden text-silver sm:text-white hover:text-silver h-[40px] w-[40px] flex justify-center items-center rounded-full drop-shadow-2l z-30"
                 onClick={() => {
                     if(isCartOpen) {
                         closeCart()
@@ -108,6 +140,29 @@ const Navbar = ({isPoster}) => {
             {/* {
                 isSeachOpen ? <SearchGallery products={ filteredProducts }></SearchGallery> : ""
             } */}
+            { mobile ?
+                <div className={`${mobileMenuOpen ? 'fixed' : 'hidden'} top-0 left-0 w-[100vw] h-[100vh] bg-silver bg-opacity-95 z-10 text-white text-2xl px-10 py-20 flex flex-col justify-end gap-8`}>
+                    <NavLink
+                        to='/my-orders'
+                        className={({ isActive }) => isActive ? activeStyle : undefined }
+                    >
+                        My Orders
+                    </NavLink>
+                    <NavLink
+                        to='/about-us'
+                        className={({ isActive }) => isActive ? activeStyle : undefined }
+                    >
+                        About Us
+                    </NavLink>
+                    <NavLink
+                        to='/contact'
+                        className={({ isActive }) => isActive ? activeStyle : undefined }
+                    >
+                        Contact
+                    </NavLink>
+                </div>
+                : ''
+            }
         </nav>
     )
 }
