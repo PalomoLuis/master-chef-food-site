@@ -6,12 +6,14 @@ import './App.css'
 
 function App() {
 
+  const location = window.location.pathname == '/'
+
   return (
     <>
       <ShoppingCartProvider>
         <BrowserRouter>
           <AppRoutes />
-          <Navbar />
+          <Navbar isPoster={location}/>
         </BrowserRouter>
       </ShoppingCartProvider>
     </>

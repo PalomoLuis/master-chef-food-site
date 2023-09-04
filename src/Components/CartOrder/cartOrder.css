@@ -1,3 +1,7 @@
+.shoppingCart {
+    grid-template-rows: 1fr 15%;
+}
+
 .cartProduct {
     grid-template-columns: 1fr 15% 20% 35px;
 }

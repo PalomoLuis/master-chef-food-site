@@ -3,7 +3,7 @@ import mainLogo from '../../../public/LogoMasterChef.svg'
 import { useContext, useState } from "react"
 import { ShoppingCartContext } from "../../Context"
 
-const Navbar = () => {
+const Navbar = ({isPoster}) => {
 
     const { count, isCartOpen, openCart, closeCart } = useContext(ShoppingCartContext)
 
@@ -11,9 +11,9 @@ const Navbar = () => {
     let mobile = false 
 
     return (
-        <nav className="flex justify-center items-center absolute top-0 z-10 w-full  mt-[30%] md:mt-[20%] lg:mt-6">
+        <nav className={`flex justify-center items-center absolute top-0 z-10 w-full ${isPoster ? 'mt-[30%] md:mt-[20%] lg:mt-6' : 'mt-6'}`}>
             <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-10/12 xl:w-8/12">
-                <div className="logo lg:w-[200px] xl:w-[240px]">
+                <div className={`logo lg:w-[200px] xl:w-[240px]`}>
                     <NavLink
                         to='/'
                     >
