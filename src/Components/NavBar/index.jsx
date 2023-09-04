@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom"
-import mainLogo from '../../../public/LogoMasterChef.svg'
+import mainLogo from '@public/LogoMasterChef.svg'
 import { useContext, useEffect, useState } from "react"
-import { ShoppingCartContext } from "../../Context"
-import SearchGallery from "../Sections/SearchGallery"
-import products from '../../data/products.json'
+import { ShoppingCartContext } from "@context"
+import SearchGallery from "@components/Sections/SearchGallery"
+import products from '@data/products.json'
 
 const Navbar = ({isPoster}) => {
     const { count, isCartOpen, openCart, closeCart } = useContext(ShoppingCartContext)

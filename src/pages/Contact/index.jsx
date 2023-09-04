@@ -1,4 +1,4 @@
-import Layout from '../../Components/Layout/index.jsx'
+import Layout from '@components/Layout/index.jsx'
 
 function Contact() {
     return (

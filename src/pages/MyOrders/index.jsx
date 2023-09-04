@@ -1,8 +1,8 @@
 import { useContext, useState } from "react"
-import { ShoppingCartContext } from "../../Context"
-import Layout from '../../Components/Layout/index.jsx'
-import { Title3 } from '../../Components/Text/Titles.jsx'
-import { CartOrder } from '../../Components/cartOrder/index.jsx'
+import { ShoppingCartContext } from "@context"
+import Layout from '@components/Layout/index.jsx'
+import { Title3 } from '@components/Text/Titles.jsx'
+import { CartOrder } from '@components/cartOrder/index.jsx'
 
 
 function MyOrders() {

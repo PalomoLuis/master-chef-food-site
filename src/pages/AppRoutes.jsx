@@ -1,9 +1,9 @@
 import { useRoutes } from 'react-router-dom'
-import Home from './Home/index.jsx'
-import AboutUs from './AboutUs/index.jsx'
-import MyOrders from './MyOrders/index.jsx'
-import Contact from './Contact/index.jsx'
-import NotFound from './NotFound/index.jsx'
+import Home from '@pages/Home/index.jsx'
+import AboutUs from '@pages/AboutUs/index.jsx'
+import MyOrders from '@pages/MyOrders/index.jsx'
+import Contact from '@pages/Contact/index.jsx'
+import NotFound from '@pages/NotFound/index.jsx'
 
 const AppRoutes = () => {
     let routes = useRoutes([

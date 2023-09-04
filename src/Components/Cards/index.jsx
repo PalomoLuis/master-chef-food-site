@@ -1,7 +1,7 @@
-import { Title3, Title4 } from "../Text/Titles"
-import { ButtonSGold } from "../Buttons"
 import { useContext } from "react"
-import { ShoppingCartContext } from "../../Context"
+import { ShoppingCartContext } from "@context"
+import { Title3, Title4 } from "@components/Text/Titles"
+import { ButtonSGold } from "@components/Buttons"
 
 
 const TextCard = ({ id, title, price, cta, description, newTag }) => {

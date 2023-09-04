@@ -1,5 +1,5 @@
 import { GalleryTwo } from "./Gallery"
-import { TextCard } from "../Cards"
+import { TextCard } from "@components/Cards"
 
 const SearchGallery = ({ products }) => {
     
