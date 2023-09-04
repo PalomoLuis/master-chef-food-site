@@ -30,6 +30,14 @@ const Navbar = ({isPoster}) => {
                     }
                     <li>
                         <NavLink
+                            to='/my-orders'
+                            className={({ isActive }) => isActive ? activeStyle : undefined }
+                        >
+                            My Orders
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
                             to='/about-us'
                             className={({ isActive }) => isActive ? activeStyle : undefined }
                         >
