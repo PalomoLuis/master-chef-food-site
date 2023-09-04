@@ -5,7 +5,7 @@
         "price": 7.00,
         "description": "",
         "image": [
-            "./src/images/croin-eggs.png"
+            "croin-eggs.png"
         ],
         "category": ["plates"]
     },
@@ -15,7 +15,7 @@
         "price": 11.20,
         "description": "",
         "image": [
-            "./src/images/mole-sauce.png"
+            "mole-sauce.png"
         ],
         "category": ["plates"]
     },
@@ -25,7 +25,7 @@
         "price": 6.75,
         "description": "",
         "image": [
-            "./src/images/moito_seeds.png"
+            "moito_seeds.png"
         ],
         "category": ["plates"]
     },
@@ -35,7 +35,7 @@
         "price": 14.00,
         "description": "",
         "image": [
-            "./src/images/non-meet-&-grill.png"
+            "non-meet-&-grill.png"
         ],
         "category": ["plates"]
     },
@@ -45,7 +45,7 @@
         "price": 4.05,
         "description": "",
         "image": [
-            "./src/images/cereal_mix.png"
+            "cereal_mix.png"
         ],
         "category": ["plates"]
     },
@@ -55,7 +55,7 @@
         "price": 4.90,
         "description": "",
         "image": [
-            "./src/images/asian_gelato.png"
+            "asian_gelato.png"
         ],
         "category": ["desserts"]
     },
@@ -65,7 +65,7 @@
         "price": 11.00,
         "description": "Very thin crispy dough with Italian sauce, Parmesan cheese, and pepperonis chosen by the chef.",
         "image": [
-            "./src/images/pepperoni-pizza.png"
+            "pepperoni-pizza.png"
         ],
         "category": ["pizzas"]
     },
@@ -75,7 +75,7 @@
         "price": 10.00,
         "description": "Delicious thin crust pizza with honey aloi decorated with bell peppers and olives.",
         "image": [
-            "./src/images/napolitana-pizza.png"
+            "napolitana-pizza.png"
         ],
         "category": ["pizzas"]
     },
@@ -85,7 +85,7 @@
         "price": 14.70,
         "description": "A mixture of flavors. Parmesan cheese mixed with Roquefort, cream, and mozzarella.",
         "image": [
-            "./src/images/four-cheese-pizza.png"
+            "four-cheese-pizza.png"
         ],
         "category": ["pizzas"]
     },
@@ -95,7 +95,7 @@
         "price": 14.30,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "image": [
-            "./src/images/blanca-flor-pizza.png"
+            "blanca-flor-pizza.png"
         ],
         "category": ["pizzas"]
     },
@@ -105,7 +105,7 @@
         "price": 12.90,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
         "image": [
-            "./src/images/margarita-pizza.png"
+            "margarita-pizza.png"
         ],
         "category": ["pizzas"]
     },
@@ -115,7 +115,7 @@
         "price": 15.60,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
         "image": [
-            "./src/images/american-pizza.png"
+            "american-pizza.png"
         ],
         "category": ["pizzas"]
     },
@@ -125,7 +125,7 @@
         "price": 4.90,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
         "image": [
-            "./src/images/pomodoro-pizza.png"
+            "pomodoro-pizza.png"
         ],
         "category": ["pizzas"]
     },
@@ -135,7 +135,7 @@
         "price": 18.09,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
         "image": [
-            "./src/images/american-texas-pizza.png"
+            "american-texas-pizza.png"
         ],
         "category": ["pizzas"]
     }
