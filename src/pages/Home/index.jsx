@@ -14,7 +14,7 @@ import products from '@data/products.json'
 import pizzaImage from '@images/pizzas-1.jpeg'
 import Footer from '@components/Sections/Footer.jsx'
 import fiftyYearsImage from '@images/fifty-years-chef-cooking.jpeg'
-import { CartOrder } from '@components/cartOrder/index.jsx'
+import { CartOrder } from '@components/CartOrder/index.jsx'
 import { ShoppingCartContext } from '@context/index.jsx'
 
 function Home() {
