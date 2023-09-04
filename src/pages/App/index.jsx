@@ -1,6 +1,6 @@
-import { ShoppingCartProvider } from '@context/index.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import AppRoutes from '../AppRoutes.jsx'
+import { ShoppingCartProvider } from '@context/index.jsx'
+import AppRoutes from '@pages/AppRoutes.jsx'
 import Navbar from '@components/NavBar/index.jsx'
 import './App.css'
 
