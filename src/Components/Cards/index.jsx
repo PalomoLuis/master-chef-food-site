@@ -8,7 +8,6 @@ const TextCard = ({ id, title, price, cta, description, newTag }) => {
     const { count, setCount, productsToShow, setProductsToShow } = useContext(ShoppingCartContext)
     const updateCartList = (data) => {
         let { id, title, price, amount } = data
-        console.log(count, productsToShow)
         let productInCardIndex = productsToShow.findIndex(value => value.id === id)
         if(productInCardIndex !== -1) {
             let products = [...productsToShow]
@@ -42,8 +41,6 @@ const ImageCard = ({ id, image, title, price, cta }) => {
     const { count, setCount, productsToShow, setProductsToShow } = useContext(ShoppingCartContext)
     const updateCartList = (data) => {
         let { id, title, price, amount } = data
-        let newData
-        console.log(count, productsToShow)
         let productInCardIndex = productsToShow.findIndex(value => value.id === id)
         if(productInCardIndex !== -1) {
             let products = [...productsToShow]
@@ -80,8 +77,6 @@ const PromotionFullCard = ({ id, image, preTitle, title, price, cta, description
     const { count, setCount, productsToShow, setProductsToShow } = useContext(ShoppingCartContext)
     const updateCartList = (data) => {
         let { id, title, price, amount } = data
-        let newData
-        console.log(count, productsToShow)
         let productInCardIndex = productsToShow.findIndex(value => value.id === id)
         if(productInCardIndex !== -1) {
             let products = [...productsToShow]

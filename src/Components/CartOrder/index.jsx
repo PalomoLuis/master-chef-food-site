@@ -11,7 +11,6 @@ export const CartOrder = () => {
     productsToShow.map(value => total += value.price * value.amount)
 
     const removeOne = (id) => {
-        console.log(productsToShow)
         let products = [...productsToShow]
         let productInCardIndex = products.findIndex(value => value.id === id)
         if(products[productInCardIndex].amount > 1) {

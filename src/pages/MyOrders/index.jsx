@@ -27,7 +27,7 @@ function MyOrders() {
                             const year = date.getFullYear()
 
                             return (
-                                <button className="w-full"
+                                <button className="w-full" key={value.id}
                                     onClick={() => {
                                         let toggleValue = !showProducts
                                         setShowProducts(toggleValue)
