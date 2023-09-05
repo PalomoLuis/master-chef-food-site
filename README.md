@@ -1,8 +1,12 @@
-# React + Vite
+<div align="center">
+  <img src="./public/LogoMasterChef.svg"/>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<br>
+<br>
 
-Currently, two official plugins are available:
+# Master Chef SV
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Master Chef SV is a food site created with React.js, vite.js, Tailwindcss, Materialize Icons, and other technologies.
+[masterchefsv](https://masterchefsv.netlify.app/)
+
